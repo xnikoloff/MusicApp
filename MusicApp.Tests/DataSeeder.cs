@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MusicApp.Infrastructure;
 
 namespace MusicApp.Tests
 {
-    internal class Class1
+    public abstract class DataSeeder<T> where T : class
     {
+        public abstract Task<MusicAppDbContext> ArrangeDbContext();
+
+        protected MusicAppDbContext BuildDbContext()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

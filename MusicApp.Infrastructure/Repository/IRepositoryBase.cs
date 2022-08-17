@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MusicApp.Infrastructure.Repository
 {
-    internal class IRepositoryBase
+    public interface IRepositoryBase<T> where T : class
     {
     }
 }

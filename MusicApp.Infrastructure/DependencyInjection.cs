@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MusicApp.Infrastructure
 {
-    internal class DependancyInjection
+    public static class DependencyInjection
     {
     }
 }

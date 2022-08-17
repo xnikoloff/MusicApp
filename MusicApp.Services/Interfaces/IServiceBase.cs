@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MusicApp.Services.Interfaces
 {
-    internal class IServiceBase
+    public interface IServiceBase<T> where T : class
     {
     }
 }

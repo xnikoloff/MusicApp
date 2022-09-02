@@ -6,4 +6,14 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MusicApp.Domain\MusicApp.Domain.csproj" />
+    <ProjectReference Include="..\MusicApp.Infrastructure\MusicApp.Infrastructure.csproj" />
+    <ProjectReference Include="..\MusicApp.Services\MusicApp.Services.csproj" />
+  </ItemGroup>
+
 </Project>

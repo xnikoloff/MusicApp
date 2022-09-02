@@ -1,0 +1,10 @@
+﻿@model List<Artist>
+
+@{
+    ViewData["Title"] = "All artists";
+}
+
+@foreach(Artist artist in Model)
+{
+    <h4>@artist.StageName (@artist.RealName)</h4>
+}

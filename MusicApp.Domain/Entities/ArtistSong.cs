@@ -1,9 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MusicApp.Domain.Entities
 {
     public class ArtistSong
     {
+        [Key]
+        public int Id { get; set; }
+
         [ForeignKey(nameof(Artist))]
         public int ArtistId { get; set; }
 
@@ -13,10 +17,5 @@ namespace MusicApp.Domain.Entities
         public int SongId { get; set; }
 
         public Song Song { get; set; } = null!;
-
-        [ForeignKey(nameof(MainArtist))]
-        public int MainArtistId { get; set; }
-
-        public Artist? MainArtist { get; set; }
     }
 }

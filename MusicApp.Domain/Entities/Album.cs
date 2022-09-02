@@ -21,6 +21,10 @@ namespace MusicApp.Domain.Entities
         [Display(Name = DisplayName.AlbumReleaseDate)]
         public DateTime ReleaseDate { get; set; }
 
+        [ForeignKey(nameof(MainArtist))]
+        public int MainArtistId { get; set; }
+        public Artist? MainArtist { get; set; }
+
         public IEnumerable<ArtistAlbum> ArtistsAlbums { get; set; }
     }
 }

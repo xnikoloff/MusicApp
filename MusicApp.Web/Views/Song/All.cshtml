@@ -1,0 +1,10 @@
+﻿@model List<Song>
+
+@{
+    ViewData["Title"] = "All songs";
+}
+
+@foreach (Song song in Model)
+{
+    <h4>@song.Title by @song.MainArtist.StageName (@song.Genre)</h4>
+}

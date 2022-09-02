@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MusicApp.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace MusicApp.Services.Interfaces
 {
-    public interface IServiceBase<T> where T : class
+    public interface ISongService : IServiceBase<Song>
     {
-        Task<List<T>> All();
     }
 }

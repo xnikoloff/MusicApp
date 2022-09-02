@@ -1,9 +1,19 @@
+using Microsoft.EntityFrameworkCore;
+using MusicApp.Infrastructure;
+using MusicApp.Services;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//add db context
+builder.Services.AddDbContext<MusicAppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddServices();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

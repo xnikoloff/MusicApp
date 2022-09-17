@@ -16,7 +16,6 @@ namespace MusicApp.Infrastructure.Configuration
                     Id = 1,
                     Title = "Black and Yellow",
                     Genre = Genre.HipHop,
-                    MainArtistId = 3
                 },
 
                 new Song
@@ -24,7 +23,6 @@ namespace MusicApp.Infrastructure.Configuration
                     Id = 2,
                     Title = "So High",
                     Genre = Genre.HipHop,
-                    MainArtistId = 3
                 },
 
                 new Song
@@ -32,7 +30,6 @@ namespace MusicApp.Infrastructure.Configuration
                     Id = 3,
                     Title = "Starboy",
                     Genre = Genre.RnB,
-                    MainArtistId = 2
                 },
 
                 new Song
@@ -40,7 +37,6 @@ namespace MusicApp.Infrastructure.Configuration
                     Id = 4,
                     Title = "Marshall Mathers",
                     Genre = Genre.HipHop,
-                    MainArtistId = 1
                 },
 
                 new Song
@@ -48,7 +44,6 @@ namespace MusicApp.Infrastructure.Configuration
                     Id = 5,
                     Title = "No Regrets",
                     Genre = Genre.HipHop,
-                    MainArtistId = 1
                 }
             );
         }

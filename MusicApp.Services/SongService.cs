@@ -29,7 +29,7 @@ namespace MusicApp.Services
         {
             if(_context.Songs != null)
             {
-                return await _context.Songs.Include(s => s.MainArtist).ToListAsync();
+                return await _context.Songs.ToListAsync();
             }
 
             throw new NullReferenceException($"{nameof(_context.Songs)} is null");

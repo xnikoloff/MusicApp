@@ -9,5 +9,6 @@ namespace MusicApp.Services.Interfaces
 {
     public interface ISongService : IServiceBase<Song>
     {
+        Task<int> Create(Song song);
     }
 }

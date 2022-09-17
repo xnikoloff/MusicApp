@@ -12,5 +12,18 @@ namespace MusicApp.Web.Controllers
         {
             return View(await _service.All());
         }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(Song song)
+        {
+            await ((ISongService)_service).Create(song);
+            return RedirectToAction(nameof(All));
+        }
     }
 }

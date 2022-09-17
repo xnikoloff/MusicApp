@@ -14,6 +14,17 @@ namespace MusicApp.Services
             _context = context;
         }
 
+        public async Task<int> Create(Song song)
+        {
+            if(song != null)
+            {
+                await _context.AddAsync(song);
+                return await _context.SaveChangesAsync();
+            }
+
+            throw new NullReferenceException($"{nameof(song)} is null");
+        }
+
         public async Task<List<Song>> All()
         {
             if(_context.Songs != null)

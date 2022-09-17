@@ -1,0 +1,21 @@
+﻿@model CreateAlbumDTO
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4">
+            <form action="Create" method="post">
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ReleaseDate"></label>
+                    <input asp-for="ReleaseDate" class="form-control"/>
+                    <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-success">Create</button>
+            </form>
+        </div>
+    </div>
+</div>

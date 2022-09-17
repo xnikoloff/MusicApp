@@ -1,4 +1,4 @@
-﻿@model List<AllSongsDTO>
+﻿@model List<AllAlbumsDTO>
 
 <div class="container">
     <div class="row">
@@ -11,26 +11,24 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Title</th>
-                        <th>Artists</th>
-                        <th>Genre</th>
-                        <th>Album</th>
+                        <th>Name</th>
+                        <th>Genres</th>
+                        <th>Release Date</th>
                         <th colspan="2">Operations</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach(AllSongsDTO dto in Model)
+                    @foreach(AllAlbumsDTO dto in Model)
                     {
                         <tr>
-                            <td>@dto.SongTitle</td>
+                            <td>@dto.Name</td>
                             <td>
-                            @foreach(string artist in @dto.ArtistsNames ?? new List<string>())
+                            @foreach(string genre in @dto.AlbumGenres ?? new List<string>())
                             {
-                                @dto.ArtistsNames
+                                @genre
                             }
                             </td>
-                            <td>@dto.Genre</td>
-                            <td>@dto.AlbumName</td>
+                            <td>@dto.ReleaseDate.ToLongDateString()</td>
                             <td>
                                 <a asp-action="Update" asp-route-id="@dto.Id"class="btn btn-warning btn-sm text-white">Update</a>
                                 <a asp-action="Delete" asp-route-id="@dto.Id"class="btn btn-danger btn-sm">Delete</a>

@@ -4,11 +4,15 @@ using MusicApp.Services.Interfaces;
 
 namespace MusicApp.Web.Controllers
 {
-    public class SongController : BaseController<Song>
+    public class SongController : Controller
     {
-        public SongController(ISongService songService) : base(songService) {}
+        private readonly ISongService _service;
+        public SongController(ISongService songService)
+        {
 
-        public override async Task<IActionResult> All()
+        }
+
+        public async Task<IActionResult> All()
         {
             return View(await _service.All());
         }
@@ -22,7 +26,7 @@ namespace MusicApp.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Song song)
         {
-            await ((ISongService)_service).Create(song);
+            //await ((ISongService)_service).Create(song);
             return RedirectToAction(nameof(All));
         }
     }

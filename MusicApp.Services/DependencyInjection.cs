@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using MusicApp.Services.Interfaces;
 
 namespace MusicApp.Services
@@ -8,8 +7,10 @@ namespace MusicApp.Services
     {
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
-            services.AddTransient<IArtistService, ArtistService>();
+            services.AddTransient<IAlbumService, AlbumService>();
             services.AddTransient<ISongService, SongService>();
+            services.AddTransient<IArtistService, ArtistService>();
+            services.AddTransient<ILibraryManager, LibraryManager>();
             return services;
         }
     }

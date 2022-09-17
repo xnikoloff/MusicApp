@@ -4,11 +4,15 @@ using MusicApp.Services.Interfaces;
 
 namespace MusicApp.Web.Controllers
 {
-    public class ArtistController : BaseController<Artist>
+    public class ArtistController : Controller
     {
-        public ArtistController(IArtistService artistService) : base(artistService) { }
+        private readonly IArtistService _service;
+        public ArtistController(IArtistService artistService)
+        {
 
-        public override async Task<IActionResult> All()
+        }
+
+        public async Task<IActionResult> All()
         {
             return View(await _service.All());
         }
